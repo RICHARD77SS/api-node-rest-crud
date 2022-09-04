@@ -1,7 +1,9 @@
 require('dotenv').config()
+const { response } = require('express')
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
+
 
 //forma de ler json / middlewares
 app.use(
@@ -12,11 +14,16 @@ app.use(
 
 app.use(express.json())
 
+//rotas da api
+
+const personRoutes = require('./routes/personRoutes')
+app.use('/person', personRoutes)
+
 //rota inicial /endpoint
 app.get('/', (req, res) => {
   //mostrar req
 
-  res.json({message: 'ola, funcionou'})
+  res.json({ message: 'ola, funcionou' })
 })
 
 const DB_USER = process.env.DB_USER
@@ -32,7 +39,7 @@ mongoose
   .then(() => {
     console.log('MongoDB conectado')
   })
-  .catch((err)=>console.log(err))
+  .catch((err) => console.log(err))
 
 app.listen(3000)
 
