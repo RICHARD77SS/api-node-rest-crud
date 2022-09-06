@@ -1,10 +1,9 @@
 require('dotenv').config()
-const { response } = require('express')
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 const cors = require('cors')
-
+const axios = require('axios');
 
 app.use(cors())
 //forma de ler json / middlewares
@@ -45,6 +44,3 @@ mongoose
 
 app.listen(3000)
 
-
-//mongodb+srv://richard_paratestes:<password>@cluster0.okphesi.mongodb.net/test
-//DD0hFVJYmIc9AuZU
