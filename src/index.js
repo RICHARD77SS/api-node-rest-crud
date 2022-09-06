@@ -45,6 +45,3 @@ mongoose
 
 app.listen(3000)
 
-
-//mongodb+srv://richard_paratestes:<password>@cluster0.okphesi.mongodb.net/test
-//DD0hFVJYmIc9AuZU
