@@ -7,6 +7,9 @@ router.post('/', async (req, res) => {
   //{name: "richard", email: "richard_email@email.com", salary: 100, active: true }
   //desestruturação
   const { name, email, salary, active } = req.body
+
+
+  
   // valida se tem nome 
   if (!name) {
     res.status(422).json({ error: 'O nome é o brigatorio' })
@@ -19,7 +22,6 @@ router.post('/', async (req, res) => {
     active
   }
   try {
-
     //criar dados
     await Person.create(person)
 
